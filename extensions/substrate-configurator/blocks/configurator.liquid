@@ -1,0 +1,8 @@
+{{ 'leafer-configurator.css' | asset_url | stylesheet_tag }}
+<div class="leafer-configurator" data-endpoint="/apps/leafer-configurator" style="--leafer-color: {{ block.settings.fallback_color }}">
+  <div class="leafer-configurator__loading">Konfigurator wird geladen …</div>
+</div>
+<script src="{{ 'leafer-configurator.js' | asset_url }}" defer></script>
+{% schema %}
+{"name":"Substrat-Konfigurator","target":"section","settings":[{"type":"color","id":"fallback_color","label":"Fallback-Farbe","default":"#315c3b"}]}
+{% endschema %}
